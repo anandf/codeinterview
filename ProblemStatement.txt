@@ -1,0 +1,22 @@
+Let's say there is a log file containing logs of an application.
+
+the log messages are of the format
+
+<level> <transaction_id> <timestamp> <event_type> <message>
+eg:
+-------------
+INFO 1234 1707887000 BEGIN the order transaction 1 has started.
+INFO 1234 1707887010 COMMIT the order transaction 1 has been committed.
+....
+INFO 1235 1707887000 BEGIN the order transaction 2 has started.
+INFO 1235 1707887020 ROLLBACK the order transaction 2 has been rolled back.
+....
+-------------
+
+level can be one of INFO, ERROR, DEBUG, WARN
+transaction_id unique alpha numberic string
+
+timestamp is epoch time in seconds
+event_type can be one of BEGIN, COMMIT, ROLLBACK
+
+The task is to find the top ten transactions that took the most time in seconds. 
